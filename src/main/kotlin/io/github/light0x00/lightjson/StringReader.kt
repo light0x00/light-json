@@ -1,6 +1,5 @@
 package io.github.light0x00.lightjson
 
-import io.github.light0x00.lightjson.Toolkit.Companion.readUnexpectedErrorMsg
 import kotlin.math.max
 import kotlin.math.min
 
@@ -29,18 +28,18 @@ class StringReader(private val str: String) : IReader {
     }
 
     override fun match(vararg expectation: String): String {
-        var matchStr: String? = null;
+        var matchStr: String? = null
         for (expStr in expectation) {
             var isAllCharsMatch = true
             for (i in expStr.indices) {
                 if (get(idx + i) != expStr[i]) {
-                    isAllCharsMatch = false;
-                    break;
+                    isAllCharsMatch = false
+                    break
                 }
             }
             if (isAllCharsMatch) {
-                matchStr = expStr;
-                break;
+                matchStr = expStr
+                break
             }
         }
         if (matchStr == null) {
@@ -54,7 +53,7 @@ class StringReader(private val str: String) : IReader {
         for (i in matchStr.indices) {
             read()
         }
-        return matchStr;
+        return matchStr
     }
 
     override fun peek(): Char? {
@@ -72,7 +71,7 @@ class StringReader(private val str: String) : IReader {
     override fun nearbyChars(): String {
         val start = max(idx - 10, 0)
         val end = min(idx + 10, str.length - 1)
-        val spaceNum = if ((idx - start) >= column) column - 1 else idx - start - 1;
+        val spaceNum = if ((idx - start) >= column) column - 1 else idx - start - 1
         val builder = StringBuilder(end - start + 1 + spaceNum + 2)
         for (i in start..end) {
             builder.append(str[i])

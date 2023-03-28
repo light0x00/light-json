@@ -1,9 +1,5 @@
 package io.github.light0x00.lightjson
 
-import io.github.light0x00.lightjson.Toolkit.Companion.readErrorMsg
-import io.github.light0x00.lightjson.Toolkit.Companion.readUnexpectedErrorMsg
-import java.util.*
-
 
 /**
  * @author light
@@ -57,7 +53,9 @@ fun parseValue(reader: IReader): Any? {
         }
         '{' -> parseKeyVal(reader)
         '[' -> parseArray(reader)
-        else -> parseNumber(reader)
+        else -> {
+            tryParseNumber(reader) ?: throw LightJsonException(readErrorMsg(reader, "Unrecognized identifier"))
+        }
     }
 }
 
@@ -94,7 +92,7 @@ fun parseString(reader: IReader): String {
 
 val NUMERIC: Set<*> = HashSet(listOf('-', '+', '.', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))
 
-fun parseNumber(reader: IReader): Number {
+fun tryParseNumber(reader: IReader): Number? {
     var existDecimalPoint = false
     var isFirst = true
     val number = StringBuilder()
@@ -116,10 +114,12 @@ fun parseNumber(reader: IReader): Number {
         number.append(lookahead)
         isFirst = false
     }
-    if (number.isEmpty() ||
-        number.length == 1 && (number.last() in listOf('.', '+', '-'))
-    ) {
+
+    if (number.isEmpty()) {
+        return null
+    } else if (number.length == 1 && (number.last() in listOf('.', '+', '-'))) {
         throw LightJsonException(readErrorMsg(reader, "Illegal number"))
     }
+
     return if (existDecimalPoint) number.toString().toDouble() else number.toString().toInt() //考虑 是否溢出、数字类型问题.
 }

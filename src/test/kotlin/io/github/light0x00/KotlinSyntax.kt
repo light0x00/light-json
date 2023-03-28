@@ -3,6 +3,8 @@ package io.github.light0x00
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlin.reflect.KVisibility
+import kotlin.reflect.full.memberProperties
 
 class Fuck(x:Int,y:Int){
 }
@@ -30,12 +32,27 @@ fun f() {
 
 }
 
-
-fun main() = runBlocking { // this: CoroutineScope
+class TestObj(val x : Int, private val  y : Int){
 
 }
 
+fun main() = runBlocking { // this: CoroutineScope
+    reflect(
+        TestObj(1,3)
+    )
+}
 
+
+fun reflect(obj : Any){
+    val c = obj::class
+    val c2 = obj::javaClass
+
+    for(p in  obj::class.memberProperties){
+        if (p.visibility == KVisibility.PUBLIC) {
+            println(p.name+","+p.getter.call(obj))
+        }
+    }
+}
 
 fun maxOf(a: Int, b: Int): Int = if (a > b) a else b
 

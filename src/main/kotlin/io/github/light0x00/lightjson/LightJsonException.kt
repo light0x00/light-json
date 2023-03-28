@@ -6,5 +6,4 @@ package io.github.light0x00.lightjson
  */
 class LightJsonException(message: String?) : RuntimeException(message) {
 
-
 }

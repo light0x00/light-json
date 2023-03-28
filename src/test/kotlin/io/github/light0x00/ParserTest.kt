@@ -45,13 +45,13 @@ class ParserTest {
 
     @Test
     fun testParseNumber() {
-        Assertions.assertEquals(1234, parseNumber(StringReader("1234")))
-        Assertions.assertEquals(0.1234, parseNumber(StringReader(".1234,56")))
-        Assertions.assertEquals(123.4, parseNumber(StringReader("+123.4,56")))
-        Assertions.assertEquals(-123.4, parseNumber(StringReader("-123.4,56")))
+        Assertions.assertEquals(1234, tryParseNumber(StringReader("1234")))
+        Assertions.assertEquals(0.1234, tryParseNumber(StringReader(".1234,56")))
+        Assertions.assertEquals(123.4, tryParseNumber(StringReader("+123.4,56")))
+        Assertions.assertEquals(-123.4, tryParseNumber(StringReader("-123.4,56")))
         Assertions.assertThrows(
             LightJsonException::class.java,
-            { parseNumber(StringReader("123.4.56")) },
+            { tryParseNumber(StringReader("123.4.56")) },
             "Illegal number"
         )
     }
