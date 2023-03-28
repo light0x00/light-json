@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.light0x00/light-json/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.light0x00/light-json/badge.svg)
 ](https://repo1.maven.org/maven2/io/github/light0x00/light-json/)
 
 Very tiny, even less than 400 line codes.
