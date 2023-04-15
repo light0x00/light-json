@@ -1,7 +1,5 @@
 package io.github.light0x00.lightjson.internal
 
-import io.github.light0x00.lightjson.readErrorMsg
-import io.github.light0x00.lightjson.readUnexpectedErrorMsg
 
 
 /**
