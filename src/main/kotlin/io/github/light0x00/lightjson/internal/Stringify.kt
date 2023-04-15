@@ -1,5 +1,6 @@
-package io.github.light0x00.lightjson
+package io.github.light0x00.lightjson.internal
 
+import io.github.light0x00.lightjson.Graph
 import kotlin.reflect.KVisibility
 import kotlin.reflect.full.memberProperties
 

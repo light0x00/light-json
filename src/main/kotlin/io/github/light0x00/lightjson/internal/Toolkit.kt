@@ -1,8 +1,6 @@
-package io.github.light0x00.lightjson
+package io.github.light0x00.lightjson.internal
 
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 fun readUnexpectedErrorMsg(reader: IReader, actual: String, expected: String): String {
     return """

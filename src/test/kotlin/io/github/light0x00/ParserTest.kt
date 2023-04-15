@@ -1,6 +1,6 @@
 package io.github.light0x00
 
-import io.github.light0x00.lightjson.*
+import io.github.light0x00.lightjson.internal.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

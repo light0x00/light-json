@@ -1,5 +1,7 @@
 package io.github.light0x00.lightjson
 
+import io.github.light0x00.lightjson.internal.*
+
 /**
  * @author light
  * @since 2023/3/26

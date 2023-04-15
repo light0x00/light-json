@@ -1,4 +1,4 @@
-package io.github.light0x00.lightjson
+package io.github.light0x00.lightjson.internal
 
 /**
  * @author light

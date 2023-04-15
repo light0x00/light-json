@@ -40,7 +40,7 @@ LightJson.parseMap("""{"a":1,"b"::"bbb"}""")
 ```
 
 ```txt
-io.github.light0x00.lightjson.LightJsonException: Unrecognized identifier
+io.github.light0x00.lightjson.internal.LightJsonException: Unrecognized identifier
 "a":1,"b"::"bbb"}
          ^
  at line 1 column 11
@@ -62,6 +62,6 @@ io.github.light0x00.lightjson.LightJsonException: Unrecognized identifier
 ```
 
 ```txt
-io.github.light0x00.lightjson.LightJsonException: Circular dependencies detected:
+io.github.light0x00.lightjson.internal.LightJsonException: Circular dependencies detected:
 User(name='Alice')->User(name='Bob')->User(name='Cindy')
 ```

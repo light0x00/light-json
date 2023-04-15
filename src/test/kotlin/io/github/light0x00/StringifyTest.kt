@@ -1,7 +1,7 @@
 package io.github.light0x00
 
-import io.github.light0x00.lightjson.LightJsonException
-import io.github.light0x00.lightjson.Stringify
+import io.github.light0x00.lightjson.internal.LightJsonException
+import io.github.light0x00.lightjson.internal.Stringify
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

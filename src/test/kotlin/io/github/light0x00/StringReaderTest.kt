@@ -1,6 +1,6 @@
 package io.github.light0x00
 
-import io.github.light0x00.lightjson.StringReader
+import io.github.light0x00.lightjson.internal.StringReader
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
