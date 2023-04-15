@@ -1,5 +1,8 @@
 package io.github.light0x00.lightjson.internal
 
+import java.util.stream.Collector
+import java.util.stream.Collectors
+import java.util.stream.Stream
 import kotlin.reflect.KVisibility
 import kotlin.reflect.full.memberProperties
 
@@ -60,9 +63,12 @@ class Stringify(obj: Any?) {
     private fun markDependencies(from: Any, to: Any) {
         val path = dependencies.path(to, from)
         if (path != null) {
+            val cycle = Stream.concat(path.stream(), Stream.of(to))
+                .map(Any::toString)
+                .collect(Collectors.joining("->"))
             throw LightJsonException(
                 """Circular dependencies detected:
-                |${path.joinToString(separator = "->")}
+                |$cycle
             """.trimMargin()
             )
         }

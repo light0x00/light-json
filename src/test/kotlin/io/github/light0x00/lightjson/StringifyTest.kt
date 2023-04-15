@@ -1,4 +1,4 @@
-package io.github.light0x00
+package io.github.light0x00.lightjson
 
 import io.github.light0x00.lightjson.internal.LightJsonException
 import io.github.light0x00.lightjson.internal.Stringify
@@ -38,7 +38,6 @@ class StringifyTest {
         alice.friend = bob
         bob.friend = cindy
         cindy.friend = alice
-
         Assertions.assertThrows(LightJsonException::class.java) { Stringify(alice) }
     }
 }

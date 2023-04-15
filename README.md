@@ -1,5 +1,7 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.light0x00/light-json/badge.svg)
-](https://repo1.maven.org/maven2/io/github/light0x00/light-json/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.light0x00/light-json/badge.svg)
+](https://repo1.maven.org/maven2/io/github/light0x00/light-json/) 
+[![Java support](https://img.shields.io/badge/Java-9+-green?logo=java&logoColor=white)](https://openjdk.java.net/)
 
 Very tiny, even less than 400 line codes.
 
@@ -7,7 +9,7 @@ Very tiny, even less than 400 line codes.
 <dependency>
     <artifactId>light-json</artifactId>
     <groupId>io.github.light0x00</groupId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
@@ -63,5 +65,5 @@ io.github.light0x00.lightjson.internal.LightJsonException: Unrecognized identifi
 
 ```txt
 io.github.light0x00.lightjson.internal.LightJsonException: Circular dependencies detected:
-User(name='Alice')->User(name='Bob')->User(name='Cindy')
+User(name='Alice')->User(name='Bob')->User(name='Cindy')->User(name='Alice')
 ```
