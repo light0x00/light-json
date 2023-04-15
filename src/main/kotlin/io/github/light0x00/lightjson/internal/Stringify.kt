@@ -3,11 +3,6 @@ package io.github.light0x00.lightjson.internal
 import kotlin.reflect.KVisibility
 import kotlin.reflect.full.memberProperties
 
-
-fun stringify() {
-
-}
-
 /**
  * @author light
  * @since 2023/3/26
@@ -63,7 +58,7 @@ class Stringify(obj: Any?) {
     }
 
     private fun markDependencies(from: Any, to: Any) {
-        var path = dependencies.path(to, from)
+        val path = dependencies.path(to, from)
         if (path != null) {
             throw LightJsonException(
                 """Circular dependencies detected:
